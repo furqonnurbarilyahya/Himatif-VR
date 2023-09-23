@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Tugas 4 IMK</title>
+    <meta name="description" content="The Pirate Museum" />
+    <!-- <script src="js/aframe.js"></script> -->
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+  </head>
+  <script>
+    // var msgPoppies = "Poppy Flowers (also known as Vase and Flowers and Vase with Viscaria) is a painting by Vincent van Gogh with an estimated value of $50 million. It was stolen from Cairo's Mohamed Mahmoud Khalil Museum in August 2010.";
+    // var msgRembrandt = "The small self-portrait on copper by Rembrandt was stolen from Nationalmuseum in Stockholm in an armed robbery in December 2000. It was recovered in Copenhagen in 2005. ";
+    // var msgWellington = "The Portrait of the Duke of Wellington is a painting by the Spanish artist Francisco Goya. It was stolen on 21st of August 1961.";
+    var msgMoore = "Welcome";
+    var msgGoslar = "Goslar Warrior is a bronze sculpture by Henry Moore. It was pirated in 2015.";
+    var msgVenus = "The Venus de Milo was 3D scanned from a plaster cast by Cosmo Wenman.";
+    var msgFaun = "The Dancing Faun was found in the ruins of Pompeii. It was 3D scanned from a plaster cast by Cosmo Wenman.";
+    var msgHepworth = "Figure for Landscape is a bronze sculpture by Barbara Hepworth, modeled in 1960. It  was pirated in 2013.";
+
+    function say(message) {
+      var msg = new SpeechSynthesisUtterance();
+      var voices = window.speechSynthesis.getVoices();
+      msg.voice = voices[2]; // Note: some voices don't support altering params
+      msg.voiceURI = "native";
+      msg.volume = 1; // 0 to 1
+      msg.rate = 1; // 0.1 to 10
+      msg.pitch = 0; //0 to 2
+      msg.text = message;
+      msg.lang = "en-GB";
+      speechSynthesis.speak(msg);
+    }
+  </script>
+  <body>
+    <a-scene>
+      <a-cylinder position="10 4 -6" height="9" width="24" rotation="0 0 0" color="#5C3D2E" material="src:#floor;"></a-cylinder>
+
+      <a-cylinder position="-10 4 -6" height="9" width="24" rotation="0 0 0" color="#5C3D2E" material="src:#floor;"></a-cylinder>
+      
+      <!-- batas tengah museum start-->
+      <!-- <a-box position="0 -0.5 -35" height="50" width="1" rotation="0 90 90" color="#D0B8A8" material="src:#florabu;"></a-box> -->
+      <!-- batas tengah museum end-->
+      
+      <!-- batas tengah museum start-->
+      <!-- <a-box position="0 0.25 -35" height="50" width="0.5" rotation="0 90 90" color="#D0B8A8" material="src:#floor;"></a-box> -->
+      <!-- batas tengah museum end -->
+
+      <!-- batas tengah museum start-->
+      <!-- <a-box position="0 0.5 -35" height="50" width="0.05" rotation="0 90 90" color="#D0B8A8" material="src:#florabu;"></a-box> -->
+      <!-- batas tengah museum end-->
+
+      <!-- atap start-->
+      <a-box position="0 9.5 -32" height="55" width="24" rotation="90 0 0" color="#BCEAD5" material="src:#floor"></a-box>
+      <!-- atap end-->
+
+      <!-- dinding utama start -->
+
+      <!-- lantai start -->
+      <a-box position="0 -1.1 -10" height="20" width="24" rotation="90 0 0" color="#BCEAD5" material="src:#floor"></a-box>
+      <!-- lantai end -->
+
+      <!-- pintu start-->
+
+      <!-- bagian atas start-->
+      <a-box position="0 6.25 -10.5" height="5.5" width="24" rotation="0 180 0" color="#D0B8A8" material="src:#florabu;"></a-box>
+      <!-- bagian atas end-->
+
+      <!-- penyangga pintu start-->
+      <a-box position="0 1 -10.5" height="4.5" width="2" rotation="0 180 0" color="#D0B8A8" material="src:#florabu;"></a-box>
+      <!-- penyangga pintu end-->
+
+      <!-- bagian kanan start -->
+      <a-box position="8 1.5 -10.5" height="4" width="8" rotation="0 180 0" color="#D0B8A8" material="src:#floor;"></a-box>
+      <!-- bagian kanan end -->
+
+      <!-- bagian kiri start -->
+      <a-box position="-8 1.5 -10.5" height="4" width="8" rotation="0 180 0" color="#D0B8A8" material="src:#floor;"></a-box>
+      <!-- bagian kiri end -->
+
+      <!-- pintu end -->
+
+      <!-- Dinding luar kanan start -->
+      <a-box position="12 3.5 -35" height="11" width="49" rotation="0 90 0" color="#FDFDBD" material="src:#floor;"></a-box>
+      <!-- Dinding luar kanan end-->
+
+      <!-- Dinding luar kiri start -->
+      <a-box position="-12 3.5 -35" height="11" width="49" rotation="0 90 0" color="#DFD3C3" material="src:#floor;"></a-box>
+      <!-- Dinding luar kiri end-->
+
+      
+      <!-- dinding utama end -->
+
+      <!-- stand kanan start-->
+      <!-- atas kanan start -->
+      <a-box position="4.2 7 -35" height="4" width="49" rotation="0 90 0" color="#D0B8A8" material="src:#florabu; repeat: 1 1"></a-box>
+      <!-- atas kanan end -->
+
+      <!-- stand 01 kanan start-->
+      <a-box position="8 4 -17.5" height="10" width="8" rotation="0 180 0" color="#AD8E70" material="src:#floor; repeat: 1 1"></a-box>
+
+      <a-entity obj-model="obj: #frame2-obj" material="color:#85CDFD" scale=".0085 .01 .01" rotation="0 -90 90" position="11.5 1.3 -13"></a-entity>
+
+      <a-image src="#1_sisca" width="1" height="1.2" position="11.33 2.23 -13.87" rotation="0 -90 0" onclick="say(msgPoppies);"></a-image>
+      
+      <!-- stand 01 kanan end -->
+
+      <!-- stand 02 kanan start-->
+      <a-box position="8 4 -24.5" height="10" width="8" rotation="0 180 0" color="#AD8E70" material="src:#floor; repeat: 1 1"></a-box>
+
+      <a-entity obj-model="obj: #frame2-obj" material="color:#85CDFD" scale=".0085 .01 .01" rotation="0 -90 90" position="11.5 1.3 -20"></a-entity>
+
+      <a-image src="#2_nabila" width="1" height="1.2" position="11.33 2.23 -20.87" rotation="0 -90 0" onclick="say(msgPoppies);"></a-image>
+      <!-- stand 02 kanan end -->
+
+      <!-- stand 03 kanan start-->
+      <a-box position="8 4 -31.5" height="10" width="8" rotation="0 180 0" color="#AD8E70" material="src:#floor; repeat: 1 1"></a-box>
+
+      <a-entity obj-model="obj: #frame2-obj" material="color:#85CDFD" scale=".0085 .01 .01" rotation="0 -90 90" position="11.5 1.3 -27"></a-entity>
+
+      <a-image src="#3" width="1" height="1.2" position="11.33 2.23 -27.87" rotation="0 -90 0" onclick="say(msgPoppies);"></a-image>
+
+      <!-- stand 03 kanan end -->
+
+      <!-- stand 04 kanan start-->
+      <a-box position="8 4 -38.5" height="10" width="8" rotation="0 180 0" color="#AD8E70" material="src:#floor; repeat: 1 1"></a-box>
+
+      <a-entity obj-model="obj: #frame2-obj" material="color:#85CDFD" scale=".0085 .01 .01" rotation="0 -90 90" position="11.5 1.3 -34"></a-entity>
+
+      <a-image src="#4_anggiCover" width="1" height="1.2" position="11.33 2.23 -34.87" rotation="0 -90 0" onclick="say(msgPoppies);"></a-image>
+
+      <!-- stand 04 kanan end -->
+
+      <!-- stand 05 kanan start-->
+      <a-box position="8 4 -45.5" height="10" width="8" rotation="0 180 0" color="#AD8E70" material="src:#floor; repeat: 1 1"></a-box>
+
+      <a-entity obj-model="obj: #frame2-obj" material="color:#85CDFD" scale=".0085 .01 .01" rotation="0 -90 90" position="11.5 1.3 -41"></a-entity>
+
+      <a-image src="#5_kelvin" width="1" height="1.2" position="11.33 2.23 -41.87" rotation="0 -90 0" onclick="say(msgPoppies);"></a-image>
+
+      <!-- stand 05 kanan end -->
+
+      <!-- stand 06 kanan start-->
+      <a-box position="8 4 -52.5" height="10" width="8" rotation="0 180 0" color="#AD8E70" material="src:#floor; repeat: 1 1"></a-box>
+
+      <a-entity obj-model="obj: #frame2-obj" material="color:#85CDFD" scale=".0085 .01 .01" rotation="0 -90 90" position="11.5 1.3 -48"></a-entity>
+
+      <a-image src="#7_ade" width="1" height="1.2" position="11.33 2.23 -48.87" rotation="0 -90 0" onclick="say(msgPoppies);"></a-image>
+
+      <!-- stand 06 kanan end -->
+
+      <!-- stand 07 kanan start-->
+      <a-box position="17 4 -59.5" height="10" width="26" rotation="0 180 0" color="#AD8E70" material="src:#floor; repeat: 1 1"></a-box>
+
+      <a-entity obj-model="obj: #frame2-obj" material="color:#85CDFD" scale=".0085 .01 .01" rotation="0 -90 90" position="11.5 1.3 -55"></a-entity>
+
+      <a-image src="#12_ivana" width="1" height="1.2" position="11.33 2.23 -55.87" rotation="0 -90 0" onclick="say(msgPoppies);"></a-image>
+
+      <!-- stand 07 kanan end -->
+
+      <!-- stand kanan end-->
+
+      <!-- stand kiri start-->
+
+      <!-- atas kiri start -->
+      <a-box position="-4.2 7 -35" height="4" width="49" rotation="0 90 0" color="#D0B8A8" material="src:#florabu; repeat: 1 1"></a-box>
+      <!-- atas kiri end -->
+
+      <!-- stand 01 start-->
+      <a-box position="-8 4 -17.5" height="10" width="8" rotation="0 180 0" color="#AD8E70" material="src:#floor; repeat: 1 1"></a-box>
+      <!-- stand 01 end -->
+
+      <!-- stand 02 start-->
+      <a-box position="-8 4 -24.5" height="10" width="8" rotation="0 180 0" color="#AD8E70" material="src:#floor; repeat: 1 1"></a-box>
+      <!-- stand 02 end -->
+
+      <!-- stand 03 start-->
+      <a-box position="-8 4 -31.5" height="10" width="8" rotation="0 180 0" color="#AD8E70" material="src:#floor; repeat: 1 1"></a-box>
+      <!-- stand 03 end -->
+
+      <!-- stand 04 start-->
+      <a-box position="-8 4 -38.5" height="10" width="8" rotation="0 180 0" color="#AD8E70" material="src:#floor; repeat: 1 1"></a-box>
+      <!-- stand 04 end -->
+
+      <!-- stand 05 start-->
+      <a-box position="-8 4 -45.5" height="10" width="8" rotation="0 180 0" color="#AD8E70" material="src:#floor; repeat: 1 1"></a-box>
+      <!-- stand 05 end -->
+
+      <!-- stand 06 start-->
+      <a-box position="-8 4 -52.5" height="10" width="8" rotation="0 180 0" color="#AD8E70" material="src:#floor; repeat: 1 1"></a-box>
+      <!-- stand 06 end -->
+
+      <!-- stand 07 start-->
+      <a-box position="-19 4 -59.5" height="10" width="30" rotation="0 180 0" color="#AD8E70" material="src:#floor; repeat: 1 1"></a-box>
+      <!-- stand 07 end -->
+
+      <!-- stand kiri end -->
+
+      <a-assets>
+        <!-- Textures -->
+
+        <!-- <img id="marble" src="img/Marble_pattern_008.jpg" crossorigin="anonymous" /> -->
+
+        <!-- foto besar -->
+        <img id="hima" src="img/hima.png" crossorigin="anonymous" />
+        
+        <img id="in" src="img/in.png" crossorigin="anonymous" />
+        
+        <img id="out" src="img/out.png" crossorigin="anonymous" />
+
+        <img id="logoItsk" src="img/logo-itsk-dr-soepraoen.png" crossorigin="anonymous" />
+
+        <img id="kampusMerdeka" src="img/kampusmerdeka.png" crossorigin="anonymous" />
+
+        <img id="bnsp" src="img/bnsp.png" crossorigin="anonymous" />
+
+        <img id="title" src="img/title.png" crossorigin="anonymous" />
+        <!-- foto besar -->
+
+        <!-- Album -->
+        <img id="1_sisca" src="img/sisca.jpg" crossorigin="anonymous" />
+        <img id="2_nabila" src="img/nabila.png" crossorigin="anonymous" />
+        <img id="3" src="img/figma1.jpg" crossorigin="anonymous" />
+        <img id="4_anggiCover" src="img/AnggiCover.jpg" crossorigin="anonymous" />
+        <img id="5_kelvin" src="img/kelvin.jpeg" crossorigin="anonymous" />
+        <img id="6" src="img/figma1.jpg" crossorigin="anonymous" />
+        <img id="7_ade" src="img/ade.jpg" crossorigin="anonymous" />
+        <img id="8" src="img/figma1.jpg" crossorigin="anonymous" />
+        <img id="9" src="img/figma1.jpg" crossorigin="anonymous" />
+        <img id="10" src="img/figma1.jpg" crossorigin="anonymous" />
+        <img id="11" src="img/figma1.jpg" crossorigin="anonymous" />
+        <img id="12_ivana" src="img/ivana.jpg" crossorigin="anonymous" />
+        <img id="13_rosyida" src="img/rosyida.jpg" crossorigin="anonymous" />
+        <img id="14" src="img/figma1.jpg" crossorigin="anonymous" />
+        <img id="15" src="img/figma1.jpg" crossorigin="anonymous" />
+        <img id="16" src="img/figma1.jpg" crossorigin="anonymous" />
+        <img id="17" src="img/BARAbere.jpeg" crossorigin="anonymous" />
+        <img id="18_iqbal" src="img/Iqbal.jpeg" crossorigin="anonymous" />
+        <img id="19_kartika" src="img/kartika.jpg" crossorigin="anonymous" />
+        <img id="20_robby" src="img/robby.jpeg" crossorigin="anonymous" />
+        <img id="21_hildan" src="img/hildan.jpeg" crossorigin="anonymous" />
+        <img id="22_anisa" src="img/anisa.jpeg" crossorigin="anonymous" />
+        <img id="23" src="img/figma1.jpg" crossorigin="anonymous" />
+        <img id="24_vera" src="img/vera.png" crossorigin="anonymous" />
+        <img id="25_furqon" src="img/furqon.jpg" crossorigin="anonymous" />
+        <img id="26_zidan" src="img/ZidanAZ.jpeg" crossorigin="anonymous" />
+        <img id="27_dio" src="img/dio.jpg" crossorigin="anonymous" />
+        <img id="28_felix" src="img/felix.png" crossorigin="anonymous" />
+        <img id="dashboard" src="img/dashboard.jpg" crossorigin="anonymous" />
+        <img id="alwan" src="img/alwan.jpeg" crossorigin="alwan" />
+        <img id="dashboard" src="img/dashboard.jpg" crossorigin="anonymous" />
+        <!-- Album -->
+
+        <!-- Frames -->
+        <a-asset-item id="framebaroque-obj" src="obj/framebaroque32k.obj"></a-asset-item>
+        <a-asset-item id="frame1-obj" src="obj/picture_frame1.obj"></a-asset-item>
+        <a-asset-item id="frame2-obj" src="obj/picture_frame2.obj"></a-asset-item>
+
+        <!-- <a-mixin id="blue" material="color: blue"></a-mixin>
+        <a-mixin id="blue-hovered" material="color: magenta"></a-mixin>
+        <a-mixin id="red" material="color: red"></a-mixin> -->
+      </a-assets>
+      <a-sky src="img/sky.jpg" radius="1200"></a-sky>
+
+      <!-- posisi foto besar-->
+      <a-image src="#hima" width="3.75" height="3.5" position="7 1.5 -9.95" rotation="0 0 0" onclick="say(msgPoppies);"></a-image>
+
+      <a-image src="#logoItsk" width="2.75" height="2.75" position="-7 1.5 -9.95" rotation="0 360 0" onclick="say(msgPoppies);"></a-image>
+
+      <a-image src="#title" width="10" height="3" position="0 6 -9.95" rotation="0 360 0" onclick="say(msgPoppies);"></a-image>
+      
+      <a-image src="#in" width="1.3" height="0.5" position="3.98 2 -10.47" rotation="0 -90 0" onclick="say(msgPoppies);"></a-image>
+
+      <a-image src="#out" width="1.3" height="0.5" position="-3.98 2 -10.47" rotation="0 90 0" onclick="say(msgPoppies);"></a-image>
+      
+      <!-- <a-image src="#kampusMerdeka" width="2.75" height="2" position="14.84 5 0" rotation="0 270 0" onclick="say(msgPoppies);"></a-image> -->
+      <!-- <a-image src="#bnsp" width="3.5" height="2" position="0 5 -14.95" rotation="0 0 0" onclick="say(msgPoppies);"></a-image> -->
+      <!-- foto besar posisi -->
+
+      <!--figura dan foto -->
+
+      <!-- HIMA -->
+
+      
+
+      <a-entity camera look-controls wasd-controls position="0 1 3">
+        <!-- posisi kamera (asli) -->
+      <!-- <a-entity camera look-controls wasd-controls position="0 1 5"> -->
+
+        <!-- <a-entity cursor="fuse: true; maxDistance: 4; timeout: 500" position="0 0 -1" scale="0.01 0.01 0.01" geometry="primitive: ring" material="color: white; shader: flat"> </a-entity> -->
+      </a-entity>
+
+      <!-- <a-entity light="type: ambient; color: #CCC"></a-entity> -->
+
+      <!-- <a-entity light="type: point; intensity: 2; distance: 100; decay: 1" position="10 10 0"></a-entity> -->
+
+      <!-- <a-entity light="type: point; intensity: 0; distance: 1; decay: 1" position="0 0 50"></a-entity> -->
+
+      <!-- <a-entity light="type: point; intensity: 1; distance: 20; decay: 1" position="40 40 10"></a-entity> -->
+
+      <!-- lantai utama lurus start-->
+      <img id="floor" src="img/floorx.jpg" crossorigin="anonymous" />
+      <a-entity geometry="primitive: plane; height: 60; width: 25" position="0 -0.5 -30" rotation="-90 0 0" material="shader: flat; src: #floor; repeat: 30 30"></a-entity>
+      <!-- lantai utama lurus end-->
+
+      <!-- lantai stand kanan start-->
+      <img id="florabu" src="img/florabu.jfif" crossorigin="anonymous" />
+      <a-entity geometry="primitive: plane; height: 50; width: 8" position="8 -0.498 -35" rotation="-90 0 0" material="shader: flat; src: #florabu; repeat: 10 10"></a-entity>
+      <!-- lantai stand kanan end-->
+
+      <!-- lantai stand kiri start-->
+      <img id="florabu" src="img/florabu.jfif" crossorigin="anonymous" />
+      <a-entity geometry="primitive: plane; height: 50; width: 8" position="-8 -0.498 -35" rotation="-90 0 0" material="shader: flat; src: #florabu; repeat: 30 30"></a-entity>
+      <!-- lantai stand kiri end-->
+
+      <!-- DIATAS ADALAH JALAN LURUS -->
+
+      <!-- DIBAWAH INI ADALAH SCRIPT BELOK KANAN KIRI -->
+      <!-- lantai utama belok kanan kiri start-->
+      <img id="floor" src="img/floorx.jpg" crossorigin="anonymous" />
+      <a-entity geometry="primitive: plane; height: 63; width: 20" position="-1.5 -0.5 -70" rotation="-90 90 0" material="shader: flat; src: #floor; repeat: 10 10"></a-entity>
+      <!-- lantai utama lurus end-->
+      <!-- Dinding atas -->
+      <a-box position="-1.5 3.5 -80.5" height="11" width="65" rotation="0 180 0" color="#FDFDBD" material="src:#floor;"></a-box>
+      <!-- Dinding atas -->
+
+      <!-- atap start-->
+      <a-box position="-1.5 9.5 -70.25" height="21.5" width="65" rotation="90 0 0" color="#BCEAD5" material="src:#floor" repeat="1 1"></a-box>
+      <!-- atap end-->
+
+      <!-- stand 01 belok start -->
+      <a-box position="30.5 4 -70" height="10" width="20" rotation="0 90 0" color="#AD8E70" material="src:#floor; repeat: 1 1"></a-box>
+      <!-- stand 01 belok end -->
+      
+      <!-- stand 02 belok start -->
+      <a-box position="23.5 4 -76" height="10" width="8" rotation="0 90 0" color="#AD8E70" material="src:#floor; repeat: 1 1"></a-box>
+      <!-- stand 02 belok end -->
+
+      <!-- stand 03 belok start -->
+      <a-box position="16.5 4 -76" height="10" width="8" rotation="0 90 0" color="#AD8E70" material="src:#floor; repeat: 1 1"></a-box>
+      <!-- stand 03 belok end -->
+      
+      <!-- stand 04 belok start -->
+      <a-box position="9.5 4 -76" height="10" width="8" rotation="0 90 0" color="#AD8E70" material="src:#floor; repeat: 1 1"></a-box>
+      <!-- stand 04 belok end -->
+      
+      <!-- stand 05 belok start -->
+      <a-box position="9.5 4 -76" height="10" width="8" rotation="0 90 0" color="#AD8E70" material="src:#floor; repeat: 1 1"></a-box>
+      <!-- stand 05 belok end -->
+      
+      <!-- stand 06 belok start -->
+      <a-box position="2.5 4 -76" height="10" width="8" rotation="0 90 0" color="#AD8E70" material="src:#floor; repeat: 1 1"></a-box>
+      <!-- stand 06 belok end -->
+      
+      <!-- stand 07 belok start -->
+      <a-box position="-5.5 4 -76" height="10" width="8" rotation="0 90 0" color="#AD8E70" material="src:#floor; repeat: 1 1"></a-box>
+      <!-- stand 07 belok end -->
+      
+      <!-- stand 08 belok start -->
+      <a-box position="-12.5 4 -76" height="10" width="8" rotation="0 90 0" color="#AD8E70" material="src:#floor; repeat: 1 1"></a-box>
+      <!-- stand 08 belok end -->
+      
+      <!-- stand 09 belok start -->
+      <a-box position="-19.5 4 -76" height="10" width="8" rotation="0 90 0" color="#AD8E70" material="src:#floor; repeat: 1 1"></a-box>
+      <!-- stand 09 belok end -->
+      
+      <!-- stand 01 belok start -->
+      <a-box position="-26.5 4 -76" height="10" width="8" rotation="0 90 0" color="#AD8E70" material="src:#floor; repeat: 1 1"></a-box>
+      <!-- stand 01 belok end -->
+      
+      <!-- stand 01 belok start -->
+      <a-box position="-33.5 4 -70" height="10" width="20" rotation="0 90 0" color="#AD8E70" material="src:#floor; repeat: 1 1"></a-box>
+      <!-- stand 01 belok end -->
+
+
+      <!-- atas belok start -->
+      <a-box position="-1.5 7 -72.3" height="4" width="63" rotation="0 180 0" color="#D0B8A8" material="src:#florabu; repeat: 1 1"></a-box>
+      <!-- atas belok end -->
+
+
+
+
+
+
+
+    </a-scene>
+  </body>
+</html>

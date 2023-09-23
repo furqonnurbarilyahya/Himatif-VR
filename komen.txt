@@ -1,0 +1,29 @@
+Position:
+<a-box> => "kiri(-) kanan(+)", "atas(+) bawah(-)", "maju(-) mundur(+1) "
+
+posisi figura di stand {
+
+	sisi sebelah kanan {
+		selisih figura antar stand adalah 7
+		dan fotonya adalah 7
+	}
+	
+	sisi sebelah bawah {
+		selisih figura antar stand adalah
+		dan fotonya adalah 
+	}
+
+	sisi sebelah atas {
+		selisih figura antar stand adalah
+		dan fotonya adalah 
+	}
+
+}
+
+Dinding Utama Start
+	dinding luar (kanan kiri)
+Dinding Utama End
+
+
+
+
